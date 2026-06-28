@@ -1,0 +1,534 @@
+.hero {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+.heroLeft {
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.heroSubtitle {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.heroCenter {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.heroMainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 200px 200px 24px 24px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 24px 0;
+}
+
+.heroStatBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statHighlight {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: 'Outfit', sans-serif;
+  line-height: 1;
+}
+
+.statHighlight span {
+  color: var(--accent);
+}
+
+.statText {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.heroInfoText {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.heroLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.heroLink:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.heroFloatingCard {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 350px;
+  border: 1px solid var(--border);
+}
+
+@media (min-width: 1024px) {
+  .heroFloatingCard {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    z-index: 10;
+  }
+}
+
+.floatingCardIcon {
+  width: 48px;
+  height: 48px;
+  background: rgba(245, 166, 35, 0.1);
+  color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.floatingCardContent h4 {
+  font-size: 1.125rem;
+  margin-bottom: 4px;
+}
+
+.floatingCardContent p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* About Section */
+.aboutImage {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.aboutImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Feature Cards (Why Us) */
+.featureCard {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  height: 100%;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  border-color: var(--accent);
+}
+
+.featureIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: rgba(245, 166, 35, 0.1);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.featureDesc {
+  color: var(--text-muted);
+}
+
+/* Services */
+.serviceCard {
+  background: var(--background);
+  padding: 32px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.serviceCard:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.serviceCard:hover .serviceIcon {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.serviceCard:hover h4 {
+  color: white;
+}
+
+.serviceIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.consultancyBox {
+  margin-top: 40px;
+  background: var(--primary);
+  color: white;
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .consultancyBox {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.consultancyContent h4 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.consultancyList {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.consultancyList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #E5E7EB;
+}
+
+.consultancyList li svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Projects Section */
+.projectCard {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.projectImage {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05);
+}
+
+.projectOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 24px 24px;
+  background: linear-gradient(to top, rgba(26, 35, 50, 0.9), transparent);
+  color: white;
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.projectStatus {
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Vision & Mission */
+.vmCard {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.vmIcon {
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.vmTitle {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.vmDesc {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+/* Founders */
+.founderCard {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.founderAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--background);
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+}
+
+.founderName {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.founderRole {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* CTA */
+.ctaSection {
+  background: var(--accent);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.ctaDesc {
+  color: var(--primary-light);
+  font-size: 1.125rem;
+  margin-bottom: 32px;
+}
+
+/* Footer */
+.footer {
+  background: var(--primary);
+  color: white;
+  padding: 80px 0 40px;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+@media (min-width: 768px) {
+  .footerGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .footerGrid { grid-template-columns: 2fr 1fr 1fr 1.5fr; }
+}
+
+.footerLogo {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.footerTagline {
+  color: #9CA3AF;
+  margin-bottom: 24px;
+}
+
+.footerTitle {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.footerLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerLinks a {
+  color: #9CA3AF;
+}
+
+.footerLinks a:hover {
+  color: var(--accent);
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #9CA3AF;
+}
+
+.contactItem svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #9CA3AF;
+  font-size: 0.875rem;
+}
+
+/* Floating Contact Buttons */
+.floatingContact {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+.floatingBtn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.floatingBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.whatsappBtn {
+  background-color: #25D366;
+}
+
+.phoneBtn {
+  background-color: var(--primary);
+}
