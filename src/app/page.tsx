@@ -88,36 +88,42 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* New Hero Section */}
+        {/* New Hero Section matching exact design */}
         <section id="home" className={styles.hero}>
           <div className={`container ${styles.heroGrid} animate-fade-in`}>
             
             {/* Left Column */}
             <div className={styles.heroLeft}>
               <h1 className={styles.heroTitle}>
-                GJ Construction.<br/>
-                We Build Trust.
+                Building<br/>
+                Dreams with<br/>
+                Precision.
               </h1>
               
               <div className={styles.heroActions}>
-                <a href="#contact" className="btn btn-primary" style={{ borderRadius: '40px', padding: '16px 32px' }}>
+                <a href="#contact" className={styles.heroBtnGreen}>
                   Contact Us
                 </a>
-                <a href="#services" className="btn btn-secondary" style={{ borderRadius: '40px', border: 'none', padding: '16px 24px', background: 'transparent' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '50%', border: '2px solid var(--accent)', color: 'var(--accent)', marginRight: '12px' }}>
-                    <Play size={18} fill="currentColor" />
+                <a href="#projects" className={styles.heroBtnOutline}>
+                  <span className={styles.heroBtnOutlineIcon}>
+                    <Play size={20} fill="currentColor" />
                   </span>
-                  View Services
+                  See Demo
                 </a>
               </div>
 
               {/* Floating Card */}
               <div className={styles.heroFloatingCard}>
-                <img src="/images/compelted-1.jpeg" alt="Small building" style={{ width: '80px', height: '120px', objectFit: 'cover', borderRadius: '8px' }} />
-                <div>
-                  <div style={{ fontWeight: 600, marginBottom: '4px' }}>Qualified Team</div>
-                  <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-                    2 Qualified Engineers personally overseeing every project.
+                <img src="/images/completed-2.jpeg" alt="Reviews" className={styles.floatingCardImage} />
+                <div className={styles.floatingCardContent}>
+                  <h4>Reviews</h4>
+                  <p>3.50 Rating | 2135 Reviews</p>
+                  <div className={styles.stars}>
+                    {[1,2,3,4,5].map((i) => (
+                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                      </svg>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -125,32 +131,28 @@ export default function LandingPage() {
 
             {/* Center Column */}
             <div className={styles.heroCenter}>
-              <img src="https://images.unsplash.com/photo-1541888081622-15f1680d75a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="GJ Construction Building" className={styles.heroMainImage} />
+              <div className={styles.heroCenterBg}></div>
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Building" className={styles.heroMainImage} />
             </div>
 
             {/* Right Column */}
             <div className={styles.heroRight}>
               
               <div className={styles.heroStatBox}>
-                <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#eee', overflow: 'hidden' }}>
-                    <User size={40} color="#999" style={{ marginTop: '8px' }}/>
-                  </div>
-                  <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#ddd', overflow: 'hidden', marginLeft: '-20px', border: '2px solid white' }}>
-                    <User size={40} color="#777" style={{ marginTop: '8px' }}/>
-                  </div>
+                <div className={styles.avatars}>
+                  <img src="https://i.pravatar.cc/100?img=11" className={styles.avatar} alt="User" />
+                  <img src="https://i.pravatar.cc/100?img=12" className={styles.avatar} alt="User" />
+                  <img src="https://i.pravatar.cc/100?img=13" className={styles.avatar} alt="User" />
                 </div>
-                <div className={styles.statText}>Completed Projects</div>
-                <div className={styles.statHighlight}>5</div>
-                
-                <div style={{ marginTop: '24px' }}></div>
-                <div className={styles.statText}>Ongoing Projects</div>
-                <div className={styles.statHighlight}>2</div>
+                <div className={styles.statText}>Total Customer</div>
+                <div className={styles.statHighlight}>150k</div>
               </div>
 
               <div>
                 <p className={styles.heroInfoText}>
-                  Delivering high-quality civil construction and engineering excellence across Tamil Nadu.
+                  we specialize in delivering<br/>
+                  high quality construction<br/>
+                  solutions that exceed.
                 </p>
                 <a href="#about" className={styles.heroLink}>
                   Read more <ArrowRight size={16} />
