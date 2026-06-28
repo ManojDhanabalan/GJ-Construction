@@ -125,7 +125,7 @@ export default function LandingPage() {
 
             {/* Center Column */}
             <div className={styles.heroCenter}>
-              <img src="/images/ongoing-1.jpeg" alt="GJ Construction Building" className={styles.heroMainImage} />
+              <img src="https://images.unsplash.com/photo-1541888081622-15f1680d75a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="GJ Construction Building" className={styles.heroMainImage} />
             </div>
 
             {/* Right Column */}
